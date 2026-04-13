@@ -16,7 +16,7 @@ const messages = [
       },
       {
         text: "Cosa volete da me?",
-        next: { text: "il tuo cazzo", remote: true }
+        next: { text: "Il tuo cazzo", remote: true }
       }
     ]
   },
@@ -53,7 +53,9 @@ const messages = [
   },
    { type: "npc", text: "A prescindere da come ci avrai risposto, FrangoBoll...", remote: true },
   { type: "npc", text: "Questo è il nostro dono per te. Abbine cura.", remote: true },
-  { type: "npc", text: "key", remote: true }
+  { type: "npc", text: "Key PS5: I64H-NHXV-9Z7Z", remote: true },
+  { type: "npc", text: "Ti salutiamo Frango, arrivederci.", remote: true },
+  { type: "npc", text: "PS. La key è cifrata scherzo epico", remote: true }
 ];
 
 /* NEXT */
