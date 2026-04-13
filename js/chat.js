@@ -79,7 +79,7 @@ function renderMessage(text, remote) {
 
   msg.innerHTML = `
     <img class="avatar" src="${
-      remote ? "assets/AVATAR.png" : "assets/USER.jpg"
+      remote ? "assets/avatar.png" : "assets/USER.jpg"
     }">
     <div class="bubble">${text}</div>
   `;
