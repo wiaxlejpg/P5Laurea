@@ -19,15 +19,11 @@ html, body {
 /* PHONE */
 .phone {
   width: 100vw;
-
   height: 100vh;
   height: -webkit-fill-available;
 
   display: flex;
   flex-direction: column;
-
-  position: relative;
-  overflow: hidden;
 
   background: #0a0a0a;
 
@@ -36,34 +32,34 @@ html, body {
 
 /* HUD */
 .hud {
-  position: absolute;
-  top: calc(env(safe-area-inset-top) + 10px);
-  left: 10px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  flex-shrink: 0;
 
-  z-index: 10;
+  padding: 10px;
 
   color: #fff;
   font-size: 12px;
-
   font-family: 'Orbitron', sans-serif;
 
-  background: rgba(0,0,0,0.6);
-  border: 2px solid #fff;
-  box-shadow: 3px 3px 0px #000;
+  background: rgba(0,0,0,0.8);
 
-  padding: 6px 8px;
+  border-bottom: 2px solid #fff;
+
+  box-shadow: 0 3px 0 #000;
 }
 
 /* CHAT */
 .chat {
   flex: 1;
+
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
   overflow-y: auto;
 
   -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
 }
 
 /* MESSAGE */
@@ -125,20 +121,19 @@ html, body {
 
 /* NEXT BUTTON */
 .next-btn {
-  position: sticky;
-  bottom: env(safe-area-inset-bottom, 0px);
-  background: #fff;
-  color: var(--red);
+  flex-shrink: 0;
 
-  border: 3px solid var(--red);
+  background: #fff;
+  color: #ff003c;
+
+  border: 3px solid #ff003c;
 
   padding: 14px;
+
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
 
-  cursor: pointer;
-
-  box-shadow: 4px 4px 0px #000;
+  box-shadow: 0 -3px 0 #000;
 }
 
 .next-btn:active {
