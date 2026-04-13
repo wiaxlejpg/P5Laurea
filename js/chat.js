@@ -12,7 +12,7 @@ const messages = [
     options: [
       {
         text: "Chi siete?",
-        next: { text: "Noi siamo i pisciazza.", remote: true }
+        next: { text: "Noi siamo i Manuela e Antonio.", remote: true }
       },
       {
         text: "Cosa volete da me?",
@@ -32,7 +32,7 @@ const messages = [
       },
       {
         text: "No!",
-        next: { text: "Allora cazzi", remote: true }
+        next: { text: "Mi dispiace, non puoi scegliere davvero.", remote: true }
       }
     ]
   },
@@ -51,6 +51,9 @@ const messages = [
       }
     ]
   },
+   { type: "npc", text: "A prescindere da come ci avrai risposto, FrangoBoll...", remote: true },
+  { type: "npc", text: "Questo è il nostro dono per te. Abbine cura.", remote: true },
+  { type: "npc", text: "key", remote: true }
 ];
 
 /* NEXT */
