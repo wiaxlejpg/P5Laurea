@@ -204,3 +204,8 @@ html, body {
 
   overflow: hidden;
 }
+
+body {
+  position: fixed;
+  width: 100%;
+}
