@@ -36,6 +36,9 @@ html, body {
 /* HUD */
 .hud {
   position: absolute;
+  top: calc(env(safe-area-inset-top) + 10px);
+  left: 10px;
+  position: absolute;
   top: 10px;
   left: 10px;
 
@@ -56,15 +59,16 @@ html, body {
 /* CHAT */
 .chat {
   flex: 1;
-  padding: 60px 16px 16px 16px;
+
+  padding: 70px 14px 14px 14px;
 
   display: flex;
   flex-direction: column;
   gap: 12px;
 
   overflow-y: auto;
-  position: relative;
-  z-index: 2;
+
+  -webkit-overflow-scrolling: touch;
 }
 
 /* MESSAGE */
@@ -126,6 +130,8 @@ html, body {
 
 /* NEXT BUTTON */
 .next-btn {
+  position: sticky;
+  bottom: env(safe-area-inset-bottom, 0px);
   background: #fff;
   color: var(--red);
 
