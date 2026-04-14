@@ -2,16 +2,20 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>System Boot</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>System Boot</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    html, body {
       margin: 0;
-      height: 100vh;
+      padding: 0;
+
+      height: 100%;
+      height: -webkit-fill-available;
 
       display: flex;
       align-items: center;
@@ -21,10 +25,10 @@
       color: white;
 
       font-family: 'Orbitron', sans-serif;
-      text-align: center;
     }
 
     .container {
+      text-align: center;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -32,45 +36,32 @@
 
     .title {
       font-size: 18px;
-      letter-spacing: 2px;
     }
 
-    .start-btn {
+    .btn {
       background: #fff;
       color: #ff003c;
 
       border: 3px solid #ff003c;
 
-      padding: 14px 20px;
-
+      padding: 14px;
       font-weight: 700;
-      cursor: pointer;
-
-      box-shadow: 4px 4px 0px #000;
     }
 
-    .start-btn:active {
-      transform: translate(2px,2px);
-      box-shadow: 2px 2px 0px #000;
-    }
-
-    /* LOADING */
     .loading {
       display: none;
       flex-direction: column;
-      gap: 16px;
       align-items: center;
+      gap: 12px;
     }
 
     .spinner {
       width: 60px;
       height: 60px;
-
       animation: spin 1s linear infinite;
     }
 
     @keyframes spin {
-      from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
   </style>
@@ -78,26 +69,24 @@
 
 <body>
 
-  <!-- START SCREEN -->
-  <div class="container" id="startScreen">
+  <div class="container" id="start">
     <div class="title">WELCOME, FRANCESCO</div>
-    <button class="start-btn" onclick="start()">START</button>
+    <button class="btn" onclick="start()">START</button>
   </div>
 
-  <!-- LOADING SCREEN -->
-  <div class="loading" id="loadingScreen">
+  <div class="loading" id="load">
     <img src="assets/spinner.png" class="spinner">
     <div>LOADING...</div>
   </div>
 
   <script>
     function start() {
-      document.getElementById("startScreen").style.display = "none";
-      document.getElementById("loadingScreen").style.display = "flex";
+      document.getElementById('start').style.display = 'none';
+      document.getElementById('load').style.display = 'flex';
 
       setTimeout(() => {
-        window.location.href = "chat.html";
-      }, 1500);
+        window.location.href = 'chat.html';
+      }, 1200);
     }
   </script>
 
