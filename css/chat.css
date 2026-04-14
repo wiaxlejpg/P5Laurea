@@ -16,19 +16,6 @@ html, body {
   font-family: 'Share Tech Mono', monospace;
 }
 
-.logo-static {
-  width: 24px;
-  height: 24px;
-
-  background-image: url("../assets/spinner.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  opacity: 0.6;
-
-  margin: 0 auto;
-}
 /* PHONE */
 .phone {
   width: 390px;
