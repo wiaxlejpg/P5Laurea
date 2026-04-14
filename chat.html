@@ -2,17 +2,19 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Dialogue System</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <title>Chat System</title>
 
-  <link rel="stylesheet" href="css/chat.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <<div class="phone">
+<div class="phone">
 
   <div class="hud">
     <div>14/04/2026</div>
@@ -25,7 +27,101 @@
 
 </div>
 
-  <script src="js/chat.js"></script>
+<script>
+const chat = document.getElementById("chat");
+let index = 0;
+
+const messages = [
+  { type: "npc", text: "Hey…", remote: true },
+  { type: "npc", text: "We’ve been watching you.", remote: true },
+
+  {
+    type: "choice",
+    options: [
+      {
+        text: "Who are you?",
+        next: { text: "We are the system.", remote: true }
+      },
+      {
+        text: "Leave me alone.",
+        next: { text: "You cannot leave.", remote: true }
+      }
+    ]
+  },
+
+  { type: "npc", text: "Your mission begins now.", remote: true }
+];
+
+function nextMessage() {
+  if (index >= messages.length) return;
+
+  const m = messages[index];
+
+  if (m.type === "npc") {
+    renderMessage(m.text, m.remote);
+    index++;
+    return;
+  }
+
+  if (m.type === "choice") {
+    renderChoice(m.options);
+    index++;
+    return;
+  }
+}
+
+function renderMessage(text, remote) {
+  const msg = document.createElement("div");
+  msg.classList.add("msg", remote ? "left" : "right");
+
+  msg.innerHTML = `
+    <img class="avatar" src="${remote ? 'assets/unknown.png' : 'assets/user.png'}">
+    <div class="bubble">${text}</div>
+  `;
+
+  chat.appendChild(msg);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function renderChoice(options) {
+  const box = document.createElement("div");
+  box.classList.add("choice-box");
+
+  options.forEach(opt => {
+    const btn = document.createElement("button");
+    btn.classList.add("choice-btn");
+    btn.textContent = opt.text;
+
+    btn.onclick = () => {
+      box.remove();
+
+      renderMessage(opt.text, false);
+
+      setTimeout(() => {
+        renderMessage(opt.next.text, opt.next.remote);
+      }, 300);
+    };
+
+    box.appendChild(btn);
+  });
+
+  chat.appendChild(box);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+/* CLOCK */
+function updateClock() {
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2, "0");
+  const m = String(now.getMinutes()).padStart(2, "0");
+  const s = String(now.getSeconds()).padStart(2, "0");
+
+  document.getElementById("time").textContent = `${h}:${m}:${s}`;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
 
 </body>
 </html>
