@@ -9,9 +9,9 @@
   box-sizing: border-box;
 }
 
-/* 🔥 FIX SAFARI + SCALA BASE */
+/* 🔥 SCALA GLOBALE (MOLTO PIÙ GRANDE) */
 html {
-  font-size: 20px; /* 💥 più grande subito */
+  font-size: 24px; /* 💥 BIG MODE */
 }
 
 html, body {
@@ -38,36 +38,36 @@ html, body {
 
   background: #0a0a0a;
 
-  border: 6px solid #fff; /* leggermente più grosso */
+  border: 8px solid #fff; /* più spesso */
 }
 
 /* HUD */
 .hud {
   flex-shrink: 0;
 
-  padding: 14px;
+  padding: 18px;
 
   color: #fff;
-  font-size: 0.9rem; /* scala con html */
+  font-size: 1rem;
 
   font-family: 'Orbitron', sans-serif;
 
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.9);
 
-  border-bottom: 3px solid #fff;
+  border-bottom: 4px solid #fff;
 
-  box-shadow: 0 3px 0 #000;
+  box-shadow: 0 4px 0 #000;
 }
 
 /* CHAT */
 .chat {
   flex: 1;
 
-  padding: 20px;
+  padding: 24px;
 
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -77,8 +77,8 @@ html, body {
 .msg {
   display: flex;
   align-items: flex-end;
-  gap: 12px;
-  max-width: 85%;
+  gap: 16px;
+  max-width: 90%;
 
   animation: pop 0.2s ease;
 }
@@ -94,13 +94,13 @@ html, body {
 
 /* AVATAR */
 .avatar {
-  width: 60px;
-  height: 60px;
+  width: 72px;
+  height: 72px;
 
   background: var(--red);
 
-  border: 3px solid #fff;
-  box-shadow: 3px 3px 0px #000;
+  border: 4px solid #fff;
+  box-shadow: 4px 4px 0px #000;
 
   clip-path: polygon(
     15% 0%,
@@ -114,15 +114,15 @@ html, body {
 
 /* BUBBLE */
 .bubble {
-  padding: 18px 20px;
+  padding: 22px 24px;
 
-  font-size: 1rem; /* 💥 ora scala bene */
+  font-size: 1.1rem;
 
   background: var(--dark);
   color: #fff;
 
-  border: 3px solid #fff;
-  box-shadow: 3px 3px 0px #000;
+  border: 4px solid #fff;
+  box-shadow: 4px 4px 0px #000;
 
   clip-path: polygon(
     0 0,
@@ -139,16 +139,16 @@ html, body {
   background: #fff;
   color: var(--red);
 
-  border: 3px solid var(--red);
+  border: 4px solid var(--red);
 
-  padding: 18px;
+  padding: 22px;
 
-  font-size: 1rem;
+  font-size: 1.1rem;
 
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
 
-  box-shadow: 0 -3px 0 #000;
+  box-shadow: 0 -4px 0 #000;
 }
 
 .next-btn:active {
@@ -159,7 +159,7 @@ html, body {
 .choice-box {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   align-self: flex-end;
 }
 
@@ -167,16 +167,16 @@ html, body {
   background: #fff;
   color: var(--red);
 
-  border: 3px solid var(--red);
+  border: 4px solid var(--red);
 
-  padding: 14px;
+  padding: 18px;
 
-  font-size: 0.95rem;
+  font-size: 1rem;
 
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
 
-  box-shadow: 3px 3px 0px #000;
+  box-shadow: 4px 4px 0px #000;
 }
 
 .choice-btn:active {
@@ -187,7 +187,7 @@ html, body {
 @keyframes pop {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
