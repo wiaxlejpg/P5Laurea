@@ -18,56 +18,48 @@ html, body {
 
 /* PHONE */
 .phone {
-  width: 390px;
-  height: 844px;
+  width: 100vw;
+  height: 100vh;
+  height: -webkit-fill-available;
 
-  margin: auto;
   display: flex;
   flex-direction: column;
 
-  position: relative;
-  overflow: hidden;
-
-  background: var(--bg);
+  background: #0a0a0a;
 
   border: 5px solid #fff;
-  box-shadow: 6px 6px 0px #000;
 }
-
 /* HUD */
 .hud {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  flex-shrink: 0;
 
-  z-index: 10;
+  padding: 10px;
 
   color: #fff;
   font-size: 12px;
-
   font-family: 'Orbitron', sans-serif;
 
-  background: rgba(0,0,0,0.6);
-  border: 2px solid #fff;
-  box-shadow: 3px 3px 0px #000;
+  background: rgba(0,0,0,0.8);
 
-  padding: 6px 8px;
+  border-bottom: 2px solid #fff;
+
+  box-shadow: 0 3px 0 #000;
 }
 
 /* CHAT */
 .chat {
   flex: 1;
-  padding: 60px 16px 16px 16px;
+
+  padding: 16px;
 
   display: flex;
   flex-direction: column;
   gap: 12px;
 
   overflow-y: auto;
-  position: relative;
-  z-index: 2;
-}
 
+  -webkit-overflow-scrolling: touch;
+}
 /* MESSAGE */
 .msg {
   display: flex;
@@ -127,18 +119,19 @@ html, body {
 
 /* NEXT BUTTON */
 .next-btn {
-  background: #fff;
-  color: var(--red);
+  flex-shrink: 0;
 
-  border: 3px solid var(--red);
+  background: #fff;
+  color: #ff003c;
+
+  border: 3px solid #ff003c;
 
   padding: 14px;
+
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
 
-  cursor: pointer;
-
-  box-shadow: 4px 4px 0px #000;
+  box-shadow: 0 -3px 0 #000;
 }
 
 .next-btn:active {
@@ -188,10 +181,9 @@ html, body {
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
+
   height: 100%;
+  height: -webkit-fill-available;
 
   overflow: hidden;
-
-  background: #0a0a0a;
 }
