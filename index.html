@@ -47,27 +47,57 @@
       cursor: pointer;
 
       box-shadow: 4px 4px 0px #000;
-      transition: 0.15s;
     }
 
     .start-btn:active {
       transform: translate(2px,2px);
       box-shadow: 2px 2px 0px #000;
     }
+
+    /* LOADING */
+    .loading {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <!-- START SCREEN -->
+  <div class="container" id="startScreen">
     <div class="title">SYSTEM ONLINE</div>
-
     <button class="start-btn" onclick="start()">START</button>
+  </div>
+
+  <!-- LOADING SCREEN -->
+  <div class="loading" id="loadingScreen">
+    <img src="assets/spinner.png" class="spinner">
+    <div>LOADING...</div>
   </div>
 
   <script>
     function start() {
-      window.location.href = "chat.html";
+      document.getElementById("startScreen").style.display = "none";
+      document.getElementById("loadingScreen").style.display = "flex";
+
+      setTimeout(() => {
+        window.location.href = "chat.html";
+      }, 1500);
     }
   </script>
 
