@@ -2,20 +2,16 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <title>System Boot</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-  <title>System Boot</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-
-      height: 100%;
-      height: -webkit-fill-available;
+      height: 100vh;
 
       display: flex;
       align-items: center;
@@ -25,10 +21,10 @@
       color: white;
 
       font-family: 'Orbitron', sans-serif;
+      text-align: center;
     }
 
     .container {
-      text-align: center;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -36,57 +32,42 @@
 
     .title {
       font-size: 18px;
+      letter-spacing: 2px;
     }
 
-    .btn {
+    .start-btn {
       background: #fff;
       color: #ff003c;
 
       border: 3px solid #ff003c;
 
-      padding: 14px;
+      padding: 14px 20px;
+
       font-weight: 700;
+      cursor: pointer;
+
+      box-shadow: 4px 4px 0px #000;
+      transition: 0.15s;
     }
 
-    .loading {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .spinner {
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    .start-btn:active {
+      transform: translate(2px,2px);
+      box-shadow: 2px 2px 0px #000;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container" id="start">
-    <div class="title">WELCOME, FRANCESCO</div>
-    <button class="btn" onclick="start()">START</button>
-  </div>
+  <div class="container">
+    <div class="title">SYSTEM ONLINE</div>
 
-  <div class="loading" id="load">
-    <img src="assets/spinner.png" class="spinner">
-    <div>LOADING...</div>
+    <button class="start-btn" onclick="start()">START</button>
   </div>
 
   <script>
     function start() {
-      document.getElementById('start').style.display = 'none';
-      document.getElementById('load').style.display = 'flex';
-
-      setTimeout(() => {
-        window.location.href = 'chat.html';
-      }, 1200);
+      window.location.href = "chat.html";
     }
   </script>
 
