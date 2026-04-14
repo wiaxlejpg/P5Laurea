@@ -17,12 +17,17 @@ html, body {
 }
 
 .logo-static {
-  max-width: 24px;
-  max-height: 24px;
-  width: 100%;
-  height: auto;
+  width: 24px;
+  height: 24px;
 
-  display: block;
+  background-image: url("../assets/spinner.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  opacity: 0.6;
+
+  margin: 0 auto;
 }
 /* PHONE */
 .phone {
