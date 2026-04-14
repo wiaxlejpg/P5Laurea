@@ -50,8 +50,8 @@ html, body {
 .chat {
   flex: 1;
 
-  padding: 16px;
-
+  padding: 80px 20px 20px 20px;
+  gap: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -81,8 +81,8 @@ html, body {
 
 /* AVATAR TRAPEZIO */
 .avatar {
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
 
   background: var(--red);
 
@@ -101,8 +101,8 @@ html, body {
 
 /* BUBBLE */
 .bubble {
-  padding: 12px 14px;
-
+  padding: 16px 18px;
+  font-size: 16px;
   background: var(--dark);
   color: #fff;
 
@@ -120,13 +120,13 @@ html, body {
 /* NEXT BUTTON */
 .next-btn {
   flex-shrink: 0;
-
+  font size: 14px;
   background: #fff;
   color: #ff003c;
 
   border: 3px solid #ff003c;
 
-  padding: 14px;
+  padding: 8px 10px;
 
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
@@ -186,4 +186,8 @@ html, body {
   height: -webkit-fill-available;
 
   overflow: hidden;
+}
+
+html {
+  font-size: clamp(16px, 2.5vw, 20px);
 }
